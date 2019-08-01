@@ -14,12 +14,12 @@
     /// <summary>
     /// <para>Jorge Serrano</para>
     /// </summary>
-    public const string ContactName = "Jorge Serrano";
+    public const string ContactName = "Guillermo Pisqui";
 
     /// <summary>
-    /// <para>http://geeks.ms/jorge/</para>
+    /// <para>https://github.com/guillermopis</para>
     /// </summary>
-    public const string ContactUrl = "http://geeks.ms/jorge/";
+    public const string ContactUrl = "https://github.com/guillermopis";
 
     /// <summary>
     /// <para>v1</para>
@@ -29,7 +29,7 @@
     /// <summary>
     /// <para>Foo API</para>
     /// </summary>
-    public const string DocInfoTitle = "Foo API";
+    public const string DocInfoTitle = "Technology API";
 
     /// <summary>
     /// <para>v1</para>
@@ -39,6 +39,6 @@
     /// <summary>
     /// <para>Foo Api - Sample Web API in ASP.NET Core 2</para>
     /// </summary>
-    public const string DocInfoDescription = "Foo Api - Sample Web API in ASP.NET Core 2";
+    public const string DocInfoDescription = "Technology Api - Sample Web API in ASP.NET Core 2.2";
 
 }
