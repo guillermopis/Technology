@@ -10,7 +10,7 @@ run the script called "dbStructure" in the DB folder.
 - verify the value of the "DefaultConnection" attribute in the appSettings.json file of the "Exoguardian" project
 
 # step 3 - Execute Migrations to "Exoguardian" proyect.
-     updata-database
+     update-database
   
 # Step 4 - Add user for the sso-Oauth proyect.
 - run the script called "insert_users" in the DB folder.
