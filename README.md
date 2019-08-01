@@ -21,7 +21,8 @@ run the script called "dbStructure" in the DB folder.
     - int the tab "Authorization" select Type: Oauth 2.0.
     
     -  Clic in the option "Get New Access Token"
-    
+               
+        - Grant Type : Implicit
         - CalllBack Url : http://localhost:8080/oidc-callback
         - Auth Url : https://localhost:5001/connect/authorize
         - Clint Id : skyfront
