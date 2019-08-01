@@ -1,4 +1,4 @@
-use SkyrangerDB;
+use demoCountrysDB;
 select * from dbo.AspNetUserRoles;
 select * from dbo.AspNetRoles;
 select * from dbo.AspNetUsers;
@@ -6,7 +6,7 @@ select * from dbo.AspNetUserClaims;
 
 --paso 1
 insert into dbo.AspNetRoles(Id,Name,NormalizedName,ConcurrencyStamp)values('e1bbad92-d631-4780-a097-9acb889154cf','IdentityManagerAdministrator','IDENTITYMANAGERADMINISTRATOR','c704cdc1-245c-4c25-97aa-dd1c98171d1b');
-insert into dbo.AspNetRoles(Id,Name,NormalizedName,ConcurrencyStamp)values('','','','');
+--insert into dbo.AspNetRoles(Id,Name,NormalizedName,ConcurrencyStamp)values('','','','');
 --paso 3
 insert into dbo.AspNetUserClaims(UserId,ClaimType,ClaimValue)values('7007c405-062c-4f85-a6bc-d35e8af79e78','role','IdentityManagerAdministrator');
 
