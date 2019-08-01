@@ -12,7 +12,7 @@ namespace apiDemo.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize("apiPolicy")]
+    [Authorize("apiPolicy")]
     public class CountryController : ControllerBase
     {
         private readonly dbContext _context;
