@@ -15,7 +15,7 @@
     "ExoGuardian": {
       "commandName": "Project",
       "environmentVariables": {
-        "STRING_CONNECTION": "Server=127.0.0.1;Database=SkyrangerDB;MultipleActiveResultSets=true;User ID=sa;Password=maruntes",
+        "STRING_CONNECTION": "Server=127.0.0.1;Database=demoCountrysDB;MultipleActiveResultSets=true;User ID=sa;Password=maruntes",
         "LINK_LOGIN": "https://localhost:7001/#/users/list",
         "EMAIL_CONFIRMED": "https://localhost:5001/",
         "EMAIL_ADDRESS": "kev.c.j1997@gmail.com",

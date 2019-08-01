@@ -2,43 +2,41 @@ use master
 go
 
 -- first step
-if db_id('demoDB') is not null begin
+if db_id('demoCountrysDB') is not null begin
    print 'db exists'
-   alter database demoDB set single_user with rollback immediate
-   drop database demoDB;
+   alter database demoCountrysDB set single_user with rollback immediate
+   drop database demoCountrysDB;
 end
 go
 
 --second step creacion de base de datos
-create database demoDB;
+create database demoCountrysDB;
 go
 
 --third step usamos la base de datos
-use demoDB;
+use demoCountrysDB;
 go
 
 
 -- define tables
-create table clientes (
+create table country (
   id int identity	not null	primary key,
-  nombres    varchar(50)	not null,
-  apellidos    varchar(50)	not null,
-  direccion    varchar(50)	not null,
-  fecha_creacion date
+  name    varchar(50)	not null,
+  alfa_2    varchar(10)	not null,
+  alfa_3    varchar(10)	not null,
+  numeric_code    varchar(50)	not null,
+  link_iso varchar(20) not null,
+  date_created date
 )
 
-create table tipoCuentas(
+create table CountryDepartaments(
 	id int identity not null primary key,
-	nombre_cuenta varchar(30) not null
+	id_country int not null,
+	name varchar(50) not null,
+	code varchar (10) not null,
+	date_created date,
+	constraint fk_idCountry foreign key(id_country) references country(id),
 );
 
-create table UserCuentas (
-  id int identity	not null	primary key,
-  id_usuario int not null,
-  id_tipo_cuenta int not null,
-  id_cuenta    varchar(50)	not null,
-  fecha_creacion date,
-  constraint fk_idUsuario foreign key(id_usuario) references clientes(id),
-  constraint fk_tipoCuenta foreign key(id_tipo_cuenta) references tipoCuentas(id)
-)
+
 

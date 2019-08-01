@@ -14,7 +14,6 @@ namespace apiDemo.Data
         {
 
         }
-        public DbSet<ClientesModel> clientes { get; set; }
         public DbSet<CountryDepartametsModel> CountryDepartaments { get; set; }
         public DbSet<CountryModel> country { get; set; }
 

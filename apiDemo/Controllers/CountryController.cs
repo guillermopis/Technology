@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using apiDemo.Data;
 using apiDemo.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace apiDemo.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize("apiPolicy")]
     public class CountryController : ControllerBase
     {
         private readonly dbContext _context;

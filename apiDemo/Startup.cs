@@ -11,6 +11,8 @@ using Microsoft.Extensions.Options;
 using Autofac;
 using Serilog;
 using Swashbuckle.AspNetCore.Swagger;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace apiDemo
 {
@@ -44,6 +46,27 @@ namespace apiDemo
             services.AddDbContext<dbContext>(options =>
                 options.UseSqlServer(Environment.GetEnvironmentVariable("CONNECTION_STRING"))
             );
+
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = appSettings.Value.AuthorityHost;
+                    options.RequireHttpsMetadata = false;
+                    //options.ApiName = "Hawk";
+                    //options.ApiSecret = "Secreto@3#2!2018";
+                });
+
+                //define policy to access endpoint
+                services.AddAuthorization(options =>
+                {
+                    options.AddPolicy("apiPolicy", policy =>
+                    {
+                        policy.RequireAuthenticatedUser();
+                        //policy.RequireRole(new string[] { "RegisteredUser" });
+                    });
+                });
 
             //configuration for cors
             services.AddCors(options =>
@@ -98,6 +121,7 @@ namespace apiDemo
 
             app.UseCors("ConfigurationCors");
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseMvc();
         }
     }
