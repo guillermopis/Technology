@@ -1,0 +1,85 @@
+@model LoginViewModel
+<div class="card w-50" style="width: auto; margin: auto auto;">
+    @await Html.PartialAsync("_ValidationSummary")
+    <div class="card-header">
+        @if (Model.EnableLocalLogin)
+        {	
+			<div class="text-center">
+				<img width="120" class="my-3 " src="https://cdn2.iconfinder.com/data/icons/audio-16/96/user_avatar_profile_login_button_account_member-512.png" class="card-img-top">
+			</div>
+			<div class="col-sm-12">
+                <div>
+                    <div class="text-center">
+                        <h2>Inicio de Sesion</h2>
+                    </div>
+                    <div>
+
+                        <form asp-route="Login">
+                            <input type="hidden" asp-for="ReturnUrl" />
+
+                            <fieldset>
+                                <div class="form-group">
+                                    <label asp-for="Username">Usuario</label>
+                                    <input class="form-control" placeholder="Usuario" asp-for="Username" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Password">Contrase&ntilde;a</label>
+                                    <input type="password" class="form-control" placeholder="Contrase&ntilde;a" asp-for="Password" autocomplete="off">
+                                </div>
+
+                                @if (Model.AllowRememberLogin)
+                                {
+                                    <div class="form-group login-remember text-center">
+                                        <label asp-for="RememberLogin">
+                                            <input asp-for="RememberLogin">
+                                            <strong>Mantener sesion iniciada</strong>
+                                        </label>
+                                    </div>
+                                }
+                                <div class="form-group text-center">
+                                    <button class="btn btn-primary" name="button" value="login">Entrar</button>
+                                    <button class="btn btn-default" name="button" value="cancel">Cancelar</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (Model.VisibleExternalProviders.Any())
+        {
+            <div class="col-md-6 col-sm-6 external-providers">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">External Login</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-inline">
+                            @foreach (var provider in Model.VisibleExternalProviders)
+                            {
+                                <li>
+                                    <a class="btn btn-default"
+                                       asp-controller="External"
+                                       asp-action="Challenge"
+                                       asp-route-provider="@provider.AuthenticationScheme"
+                                       asp-route-returnUrl="@Model.ReturnUrl">
+                                        @provider.DisplayName
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (!Model.EnableLocalLogin && !Model.VisibleExternalProviders.Any())
+        {
+            <div class="alert alert-warning">
+                <strong>Invalid login request</strong>
+                There are no login schemes configured for this client.
+            </div>
+        }
+    </div>
+</div>

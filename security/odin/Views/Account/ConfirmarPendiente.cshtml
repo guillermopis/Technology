@@ -1,0 +1,12 @@
+﻿<div class="row">
+    <div class="col-sm-6">
+        <p>
+            Te hemos enviado un mensaje de confirmacion a tu correo electronico<br />
+            una ves confirmado oprime <a href=@Environment.GetEnvironmentVariable("PROTECTED")>continuar</a>
+        </p>
+        
+    </div>
+</div>
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

@@ -1,0 +1,35 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/ExoGuardian",
+      "sslPort": 0
+    },
+    "iisExpress": {
+      "applicationUrl": "http://localhost:8420",
+      "sslPort": 44332
+    }
+  },
+  "profiles": {
+    "ExoGuardian": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "STRING_CONNECTION": "Server=127.0.0.1;Database=SkyrangerDB;MultipleActiveResultSets=true;User ID=sa;Password=maruntes",
+        "LINK_LOGIN": "https://localhost:7001/#/users/list",
+        "EMAIL_CONFIRMED": "https://localhost:5001/",
+        "EMAIL_ADDRESS": "kev.c.j1997@gmail.com",
+        "LINK_ETHOS_LOGOUT": "https://localhost:7001/signout-callback-oidc",
+        "PROTECTED": "http://localhost:8080/protected",
+        "POST_LOGOUT": "http://localhost:8080",
+        "CORS_REDIRECT_URI1": "http://localhost:8080/oidc-callback",
+        "CORS_REDIRECT_URI2": " http://localhost:8080/silent-renew-oidc.html",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CORS_ORIGIN": "http://localhost:8080",
+        "LINK_ETHOS_LOGIN": "https://localhost:7001/signin-oidc",
+        "PASSWORD": "tobi1235"
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+    }
+  }
+}

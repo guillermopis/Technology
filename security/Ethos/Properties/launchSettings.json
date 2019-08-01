@@ -1,0 +1,35 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/Ethos",
+      "sslPort": 0
+    },
+    "iisExpress": {
+      "applicationUrl": "http://localhost:54193",
+      "sslPort": 44354
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IIS",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "STRING_CONNECTION": "Server=127.0.0.1;Database=SkyrangerDB;MultipleActiveResultSets=true;User ID=sa;Password=maruntes",
+        "LINK_EXO_GUARDIAN": "https://localhost:5001",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Ethos": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "STRING_CONNECTION": "Server=127.0.0.1;Database=SkyrangerDB;MultipleActiveResultSets=true;User ID=sa;Password=maruntes",
+        "LINK_EXO_GUARDIAN": "https://localhost:5001",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:7001;http://localhost:7000"
+    }
+  }
+}
